@@ -1,0 +1,29 @@
+Открыть командную строку
+
+Устанавливаем расширения
+pip install fastapi uvicorn pillow opencv-python moviepy
+pip install python-multipart
+
+Переходим в папку с кодом
+cd C:\Homeworks\Api1
+
+Открываем сервер
+uvicorn hw1:app --reload
+
+Открыть в браузере
+http://127.0.0.1:8000/docs
+
++ На сервере(в браузере) +
+
+PUT /upload/ - загружает файлы на сервер
+		То есть в папку C:\Homeworks\Api1\files
+
+GET /download/{file_id} - имеет 2 функционала:
+		1) Если указать только file_id - выдаст ссылку на скачивание файла
+		2) Если указать file_id и width,height - покажет изображение, полученного
+							 превью и загрузит его в папку
+							    C:\Homeworks\Api1\previews
+
+GET /files/ - Выдает список из загруженных на сервер файлов, выдавая их название и id
+
+
